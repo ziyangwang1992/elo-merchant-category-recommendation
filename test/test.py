@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # get data
     # gen features
     result = extract_features()
-    if not result:
+    if result is False:
         sys.stderr.write("[FATAL]extract_features failed.\n")
         sys.exit(1)
 
