@@ -1,3 +1,4 @@
+authorized_flag,card_id,city_id,category_1,installments,category_3,merchant_category_id,merchant_id,month_lag,purchase_amount,purchase_date,category_2,state_id,subsector_id
 Y,C_ID_4e6213e9bc,-1,N,0,A,528,M_ID_44b78002d2,2,-0.70333091,2018-04-29 12:52:33,,-1,25
 Y,C_ID_4e6213e9bc,69,N,0,A,68,M_ID_e1a0b74f32,2,-0.64923547,2018-04-29 18:13:17,1.00000000,9,27
 Y,C_ID_5037ff576e,42,N,1,B,307,M_ID_7c621e17ac,2,1.35680386,2018-02-04 02:39:22,3.00000000,19,19

@@ -3,13 +3,13 @@ import sys
 import pandas as pd
 import numpy as np
 
-from data.data_processor import *
+from utils.data_processor import *
 from feature.extractor import extract_features
 from config.config import *
 
 
 if __name__ == '__main__':
-    # get data
+    # get utils
     # gen features
     result = extract_features()
     if result is False:
