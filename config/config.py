@@ -3,7 +3,7 @@ import os
 # col name
 CARD_ID = 'card_id'
 MERCHANT_ID = 'merchant_id'
-
+AUTHORIZED_FLAG = 'authorized_flag'
 INTERVAL_DAYS = 'interval_days'
 
 # feature
@@ -19,10 +19,10 @@ card_feat_from_train_path = "../dataset/data/test/train.out.csv"
 test_card_input_path = "../dataset/data/test/test.csv"
 card_feat_from_test_path = "../dataset/data/test/test.out.csv"
 
-his_tran_mer_path = ""
-card_feat_from_his_tran_mer_path = ""
-new_tran_mer_path = ""
-card_feat_from_new_tran_mer_path = ""
-card_feat_from_tran_mer_path = ""
+his_tran_mer_path = "../dataset/data/test/his.tran.mer.csv"
+card_feat_from_his_tran_mer_path = "../dataset/data/test/card.feature.his.csv"
+new_tran_mer_path = "../dataset/data/test/new.tran.mer.csv"
+card_feat_from_new_tran_mer_path = "../dataset/data/test/card.feature.new.csv"
+card_feat_from_tran_mer_path = "../dataset/data/test/card.feature.train.csv"
 
-card_feature_path = ""
+card_feature_path = "../dataset/data/test/card.feature.csv"

@@ -40,14 +40,22 @@ class MerchantExtractor(BaseExtractor):
         category_4 = pd.get_dummies(df['category_4'], prefix='category_4')
         df = pd.concat([df, category_4], axis=1)
 
-        city_id = pd.get_dummies(df['city_id'], prefix='city_id')
-        df = pd.concat([df, city_id], axis=1)
+        #city_id = pd.get_dummies(df['city_id'], prefix='city_id')
+        #df = pd.concat([df, city_id], axis=1)
 
         state_id = pd.get_dummies(df['state_id'], prefix='state_id')
         df = pd.concat([df, state_id], axis=1)
 
         category_2 = pd.get_dummies(df['category_2'], prefix='category_2')
         df = pd.concat([df, category_2], axis=1)
+
+        df.drop(["subsector_id", "merchant_group_id", "merchant_category_id",
+                 "subsector_id", "numerical_1", "numerical_2", "category_1",
+                 "most_recent_sales_range", "most_recent_purchases_range",
+                 "avg_sales_lag3", "avg_purchases_lag3", "active_months_lag3",
+                 "avg_sales_lag6", "avg_purchases_lag6", "active_months_lag6",
+                 "avg_sales_lag12", "avg_purchases_lag12", "active_months_lag12",
+                 "category_4", "city_id", "state_id", "category_2"], axis=1, inplace=True)
 
         # modify _data
         self.set_data(df)

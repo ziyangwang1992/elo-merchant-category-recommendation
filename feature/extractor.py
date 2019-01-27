@@ -40,7 +40,6 @@ def extract_features():
         sys.stderr.write("[FATAL]new_transaction_extractor failed.\n")
         return False
     print("----- New TransactionExtractor end -----")
-    """
 
     # 对训练集和测试集的信用卡特征进行处理，得到信用卡特征1.1和1.2
     # train
@@ -57,8 +56,8 @@ def extract_features():
         sys.stderr.write("[FATAL]test_card_extractor failed.\n")
         return False
     print("----- Test CardExtractor end -----")
-
     """
+
     # 历史交易和商品按照merchant_id merge，进而得到信用卡特征2.1
     # 历史交易和商品特征合并
     print("----- merge history transaction and merchant begin -----")
@@ -68,7 +67,8 @@ def extract_features():
     his_tran_mer_df.to_csv(his_tran_mer_path, header=True, index=False)
     # 分析合并表，得到信用卡特征
     print("----- history transaction merchant Extractor begin -----")
-    his_tran_mer_extractor = TransMerchantExtractor(his_tran_mer_path, card_feat_from_his_tran_mer_path)
+    his_tran_mer_extractor = TransMerchantExtractor(his_tran_mer_path,
+                                                    card_feat_from_his_tran_mer_path, pre="his_")
     if his_tran_mer_extractor.extract_features() is False:
         sys.stderr.write("[FATAL]his_trans_merchant_card_extractor failed.\n")
         return False
@@ -81,11 +81,13 @@ def extract_features():
     new_tran_mer_df.to_csv(new_tran_mer_path, header=True, index=False)
     # 分析合并表，得到信用卡特征
     print("----- new transaction merchant Extractor begin -----")
-    new_tran_mer_extractor = TransMerchantExtractor(new_tran_mer_path, card_feat_from_new_tran_mer_path)
+    new_tran_mer_extractor = TransMerchantExtractor(new_tran_mer_path,
+                                                    card_feat_from_new_tran_mer_path, pre="new_")
     if new_tran_mer_extractor.extract_features() is False:
         sys.stderr.write("[FATAL]new_trans_merchant_card_extractor failed.\n")
         return False
 
+    """
     # merge 信用卡特征2.1和2.2，得到信用卡特征2
     print("----- merge card feature from transaction begin -----")
     card_feat_2_1 = read_data(card_feat_from_his_tran_mer_path)
