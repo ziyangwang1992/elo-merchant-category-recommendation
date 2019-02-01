@@ -28,7 +28,7 @@ class CardExtractor(BaseExtractor):
         com_date = "2018-05"
         df[INTERVAL_DAYS] = df['first_active_month'].apply(get_interval_days, str2=com_date)
 
-        df.drop(['feature_1', 'feature_2', 'feature_3'], axis=1, inplace=True)
+        df.drop(['feature_1', 'feature_2', 'feature_3', 'first_active_month'], axis=1, inplace=True)
 
         # modify _data
         self.set_data(df)

@@ -1,8 +1,10 @@
 import datetime
 
 
-def string_to_time(str, form="%Y-%m"):
-    return datetime.datetime.strptime(str, form)
+def string_to_time(string, form="%Y-%m"):
+    if string is None or len(str(string)) != 7:
+        string = "2015-05"
+    return datetime.datetime.strptime(string, form)
 
 
 def get_interval_days(str1, str2, form="%Y-%m"):
